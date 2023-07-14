@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+
+# Start Unicorn in the background
+bundle exec unicorn -c config/unicorn.rb &
+
+# Start Nginx in the foreground
+exec bin/start-nginx
